@@ -1,0 +1,255 @@
+input,
+textarea {
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 10px;
+}
+
+input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-group {
+  clear: both;
+  margin: 15px 0;
+  position: relative;
+}
+
+.input-group input[type="button"] {
+  background-color: #eeeeee;
+  min-width: 38px;
+  width: auto;
+  transition: all 300ms ease;
+}
+
+.input-group .button-minus,
+.input-group .button-plus {
+  font-weight: bold;
+  height: 38px;
+  padding: 0;
+  width: 38px;
+  position: relative;
+}
+
+.input-group .quantity-field {
+  position: relative;
+  height: 38px;
+  left: -6px;
+  text-align: center;
+  width: 62px;
+  display: inline-block;
+  font-size: 13px;
+  margin: 0 0 5px;
+  resize: vertical;
+}
+
+.button-plus {
+  left: -13px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+.listingpage-increment .count-show {
+  float: left;
+  width: 100px;
+}
+.listingpage-increment .inc-dec-btn {
+  float: left;
+  width: calc(100% - 100px);
+}
+.initial-range p,
+.final-range p {
+  font-size: 12px;
+  line-height: 42px;
+}
+.initial-range {
+  text-align: left;
+}
+.final-range {
+  text-align: right;
+}
+.initial-range,
+.final-range {
+  width: 60px;
+  float: left;
+}
+.rang-slider {
+  float: left;
+  width: calc(100% - 120px);
+}
+.rang-slider .ant-slider-track {
+  height: 2px;
+  background-color: #242424;
+}
+.rang-slider .ant-slider-handle {
+  border: solid 1px #242424;
+}
+.initialinput-search-btn {
+  margin-top: 27px;
+  /* line-height: 59px; */
+  width: 100%;
+  /* height: 100%; */
+}
+.listinginput .btn {
+  background: #222;
+}
+.listinginput .btn:hover {
+  background: #5db64c;
+  color: #fff;
+}
+.initialinput-search-btn button {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.initialinput-search-btn button i {
+  font-size: 16px;
+}
+.listinginput-location .ui.selection.dropdown {
+  border: 0;
+  background: none;
+  border-bottom: 1px solid #242424;
+  border-radius: 0;
+  padding: 0.78571429em 2.1em 0.78571429em 5px;
+}
+.listinginput-location .ui.upward.selection.dropdown.visible {
+  border-radius: 0 !important;
+}
+.listinginput-location .ui.dropdown > .text {
+  font-size: 12px;
+  font-family: "SharpSans-Medium";
+  color: #242424 !important;
+}
+.listinginput label {
+  width: 100%;
+  color: #5db64c;
+  font-family: "SharpSans-Bold";
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.listinginput .ant-calendar-range-picker-input {
+  font-size: 16px;
+  font-family: "SharpSans-Medium";
+  color: #242424;
+  height: 100%;
+  text-align: left;
+  padding: 10px 5px;
+  width: 40%;
+}
+.listinginput .ant-calendar-range-picker-input::placeholder {
+  color: #242424;
+}
+.listinginput .ant-input {
+  height: 40px;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid #242424;
+  border-radius: 0;
+  background: none;
+  background-image: url("../../assets/small-calendar.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 95%;
+}
+.listinginput .ant-calendar-picker {
+  width: 100%;
+}
+.listinginput .ant-input:hover {
+  border-color: inherit !important;
+}
+
+.listinginput .listinginput-daterange .ant-calendar-range-picker-separator {
+  line-height: 30px;
+  margin-right: 10px;
+}
+.listinginput-daterange .ant-calendar-range-picker-separator {
+  color: #242424;
+  line-height: 0;
+}
+.listinginput-daterange .ant-calendar-picker-icon {
+  line-height: 0;
+  width: 21px !important;
+  color: #242424;
+}
+.listingpage-increment {
+  border-bottom: 1px solid #242424;
+}
+.listingpage-count-show {
+  float: left;
+  width: calc(100% - 60px);
+}
+.listingpage-count-show input {
+  width: 100%;
+  color: #242424;
+  background: transparent;
+  border: 0;
+}
+.listingpage-increment .spin-btn {
+  width: 20px;
+  float: left;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.listingpage-increment .spin-btn input {
+  padding: 0;
+  font-size: 35px;
+  line-height: 40px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+}
+.listingpage-increment .spin-btn-dec input {
+  line-height: 35px;
+}
+.listinginput-daterange .ant-calendar-picker-icon {
+  display: none;
+}
+
+.listinginput .ui.selection.active.dropdown:hover .menu,
+.ui.selection.dropdown:focus .menu,
+.ui.selection.active.dropdown .menu {
+  border: 0;
+}
+.selectedcity {
+  font-size: 16px;
+  height: 40px;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid #242424;
+  border-radius: 0;
+  background: none;
+  width: 100%;
+}
+@media only screen and (max-width: 990px) {
+  .listinginput {
+    margin-bottom: 25px;
+    background: #fff;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+  .initialinput-search-btn {
+    margin-top: 10px;
+  }
+}
+.datepicker-iconlisting {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  z-index: 0;
+}
+.datepickerbtm {
+  border-bottom: 1px solid;
+}

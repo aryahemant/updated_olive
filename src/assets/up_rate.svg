@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="12" height="16"
+     viewBox="0 0 12 16">
+    <defs>
+        <path id="aep9a"
+              d="M537.144 260.372v10.496a1.144 1.144 0 0 1-2.288 0v-10.496l-2.902 2.901a1.144 1.144 0 0 1-1.619-1.618L536 255.99l5.665 5.665a1.145 1.145 0 0 1-1.619 1.618z"/>
+    </defs>
+    <g>
+        <g transform="translate(-530 -256)">
+            <use fill="#15bb7a" xlink:href="#aep9a"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+.register-contain{
+    background: #fff;
+    padding: 15px;
+    -webkit-box-shadow: 0px 0px 0px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 0px 6px rgba(235, 235, 235, 0.75);
+    border-radius: 10px;
+}
+.register-section{    background-repeat: no-repeat;
+    background-image: url(/static/media/list-block-bg.714de62e.jpg);
+    background-position: center;
+    background-size: cover;
+}

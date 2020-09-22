@@ -1,0 +1,119 @@
+.help-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.help-detail {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+.checkout-login {
+  background: #fff;
+  padding: 20px;
+}
+.checkout-login .registerform .button {
+  width: max-content;
+}
+.gaurantee-check {
+  padding-left: 0;
+  list-style: none;
+}
+.gaurantee-check li {
+  line-height: 24px;
+  font-size: 16px;
+}
+.card-type .selection {
+  border: 1px solid #000000ab !important;
+  margin-bottom: 30px !important;
+  font-size: 16px !important;
+  font-family: "SharpSans-Semibold" !important;
+  background: transparent !important;
+}
+.gst-checkbox .checkbox {
+  margin-bottom: 20px;
+}
+.gst-checkbox label {
+  line-height: 27px !important;
+}
+.cbox-desc {
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 28px;
+}
+.pad2050 {
+  padding: 20px 50px !important;
+}
+.wid-60 {
+  width: 60%;
+}
+.select-payment .ui.radio.checkbox .box:after,
+.ui.radio.checkbox label:after {
+  top: 5px;
+}
+.select-payment .checkbox {
+  margin-bottom: 0px !important;
+}
+.select-payment .ui.form {
+  margin-bottom: 30px;
+}
+.errormsg {
+  word-spacing: 0px;
+  color: red;
+  text-align: left;
+}
+.cardshow {
+  line-height: 24px;
+  font-size: 16px;
+  float: right;
+  width: 90%;
+  margin-left: 12px;
+}
+.warnmsg {
+  font-size: 11px;
+}
+.card-type {
+  border: 1px solid !important;
+  background: #f5f4f4 !important;
+}
+.selctlbl {
+  font-size: 16px !important;
+  font-family: "SharpSans-Bold" !important;
+  color: #000 !important;
+  text-transform: capitalize !important;
+  font-weight: 500 !important;
+  margin-bottom: 10px !important;
+  line-height: 16px !important;
+}
+.checkoutpolicy p {
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+.checkoutpolicy p:first-child {
+  font-size: 27px !important;
+  line-height: 30px !important;
+}
+.pointershow {
+  cursor: pointer;
+}
+.agreecheckbox {
+  float: left;
+  margin-right: 12px;
+}
+.agreeerrormsg {
+  word-spacing: 0px;
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+/* #merchant-desc {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 0.8;
+  white-space: initial !important;
+} */
+#merchant {
+  white-space: inherit !important;
+}

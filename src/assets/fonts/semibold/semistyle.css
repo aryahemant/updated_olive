@@ -1,0 +1,9 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "SharpSans-Semibold";
+
+  src: url("./fonts/SharpSans10.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/SharpSans10.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

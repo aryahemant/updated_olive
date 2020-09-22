@@ -1,0 +1,15 @@
+.policy p {
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  line-height: 22px;
+}
+@media only screen and (max-width: 990px) {
+  .dialogbox {
+    width: 90%;
+    height: 85vh;
+  }
+  .dialogboxtext {
+    overflow-y: scroll;
+  }
+}

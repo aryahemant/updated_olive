@@ -1,0 +1,11 @@
+.apt-det-title{
+    text-transform: capitalize ;
+}
+.apt-det-img-gal .owl-nav{position: absolute;
+    top: 50px;
+    width: 100%;}
+
+@media only screen and (max-width: 990px){
+    .apt-det-img-gal .owl-nav{top: 65px;}
+
+}

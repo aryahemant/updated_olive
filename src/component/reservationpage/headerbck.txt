@@ -1,0 +1,586 @@
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./header.css";
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+  Button,
+  Form,
+  FormControl,
+} from "react-bootstrap";
+// import { Route, withRouter } from "react-dom";
+import history from "../../lib/history";
+import { render } from "react-dom";
+<<<<<<< HEAD
+import App from '../../App';
+import Apartmentlisting  from '../apartmentlisting/apartmentlisting'
+import ApartmentDetailPage  from '../ApartmentDetailPage/ApartmentDetailPage'
+import Mobheader from '../mobheader/mobheader';
+import axios from 'axios';
+import Home  from '../Home/Home';
+import Registerpage  from '../registerpage/registerpage';
+import Loginpage  from '../loginpage/loginpage';
+import Checkoutpage  from '../checkoutpage/checkoutpage';
+import Thankyoupage  from '../thankyoupage/thankyoupage';
+import Profile  from '../profile/profile';
+import Reservationpage  from '../reservationpage/reservationpage';
+import Upsellpage  from '../upsellpage/upsellpage';
+import About  from '../staticpages/about';
+import Offers  from '../staticpages/offers';
+import Faqs  from '../staticpages/faqs';
+import Booking  from '../staticpages/booking';
+import Terms  from '../staticpages/terms';
+import Privacypolicy  from '../staticpages/privacypolicy';
+import Refundpolicy  from '../staticpages/refundpolicy';
+import Lowprice  from '../staticpages/lowprice';
+import Contactus  from '../staticpages/contactus';
+import Onlinepayment   from '../staticpages/onlinepayment';
+import Directpayment   from '../staticpages/directpayment';
+import {
+     Router,
+    Switch,
+    Route,
+    NavLink,
+    withRouter
+  } from "react-router-dom";
+  
+=======
+import App from "../../App";
+import Apartmentlisting from "../apartmentlisting/apartmentlisting";
+import ApartmentDetailPage from "../ApartmentDetailPage/ApartmentDetailPage";
+import Mobheader from "../mobheader/mobheader";
+import axios from "axios";
+
+import Home from "../Home/Home";
+import Registerpage from "../registerpage/registerpage";
+import Loginpage from "../loginpage/loginpage";
+import Checkoutpage from "../checkoutpage/checkoutpage";
+import Thankyoupage from "../thankyoupage/thankyoupage";
+import Profile from "../profile/profile";
+import Reservationpage from "../reservationpage/reservationpage";
+import Upsellpage from "../upsellpage/upsellpage";
+import About from "../staticpages/about";
+import Offers from "../staticpages/offers";
+import Faqs from "../staticpages/faqs";
+import Booking from "../staticpages/booking";
+import Terms from "../staticpages/terms";
+import Privacypolicy from "../staticpages/privacypolicy";
+import Refundpolicy from "../staticpages/refundpolicy";
+import Lowprice from "../staticpages/lowprice";
+import Contactus from "../staticpages/contactus";
+import Onlinepayment from "../staticpages/onlinepayment";
+import Directpayment from "../staticpages/directpayment";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    main: Home,
+  },
+  {
+    path: "/property",
+    exact: true,
+    main: Apartmentlisting,
+  },
+  {
+    path: "/detail/page",
+    exact: true,
+    main: ApartmentDetailPage,
+  },
+  {
+    path: "/register",
+    exact: true,
+    main: Registerpage,
+  },
+  {
+    path: "/login",
+    exact: true,
+    main: Loginpage,
+  },
+  {
+    path: "/checkout",
+    exact: true,
+    main: Checkoutpage,
+  },
+  {
+    path: "/thankyou",
+    exact: true,
+    main: Thankyoupage,
+  },
+  {
+    path: "/profile",
+    exact: true,
+    main: Profile,
+  },
+  {
+    path: "/reservation",
+    exact: true,
+    main: Reservationpage,
+  },
+  {
+    path: "/upsell",
+    exact: true,
+    main: Upsellpage,
+  },
+  {
+    path: "/about",
+    exact: true,
+    main: About,
+  },
+  {
+    path: "/offers",
+    exact: true,
+    main: Offers,
+  },
+  {
+    path: "/faqs",
+    exact: true,
+    main: Faqs,
+  },
+  {
+    path: "/booking",
+    exact: true,
+    main: Booking,
+  },
+  {
+    path: "/terms-and-conditions",
+    exact: true,
+    main: Terms,
+  },
+  {
+    path: "/privacy-policy",
+    exact: true,
+    main: Privacypolicy,
+  },
+  {
+    path: "/refund-cancellation",
+    exact: true,
+    main: Refundpolicy,
+  },
+  {
+    path: "/lowest-price-guarantee",
+    exact: true,
+    main: Lowprice,
+  },
+  {
+    path: "/conatct-us",
+    exact: true,
+    main: Contactus,
+  },
+  {
+    path: "/online-payment",
+    exact: true,
+    main: Onlinepayment,
+  },
+  {
+    path: "/direct-payment",
+    exact: true,
+    main: Directpayment,
+  },
+];
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityId: "",
+      startDateValue: "",
+      endDateVal: "",
+      cityName: "",
+      idValue: "",
+      cities: [],
+<<<<<<< HEAD
+      apartmentTitle: '',
+      nobeds: '',
+      nobath: '',
+      cancelType: '',
+      cancelTypeImage: '',
+      dealPrice: '',
+      apartmentName: '',
+      apartmentImage: '',
+      stdToSupPrice: '',
+      stdToSupPriceFree: '',
+      supToPre: '',
+      supToPreFree: '',
+=======
+
+      apartmentTitle: "",
+      nobeds: "",
+      nobath: "",
+      cancelType: "",
+      cancelTypeImage: "",
+      dealPrice: "",
+      apartmentName: "",
+      apartmentImage: "",
+      stdToSupPrice: "",
+      stdToSupPriceFree: "",
+      supToPre: "",
+      supToPreFree: "",
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+      amenityDetail: [],
+      amenityPrice: "",
+      propertyId: "",
+      cityId1: "",
+      city: "",
+      noDays: null,
+      selectedKey: "Add",
+      discountPrice: 0,
+<<<<<<< HEAD
+      name: '',
+      
+
+    }
+=======
+    };
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+    this.handleValue = this.handleValue.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleEndDate = this.handleEndDate.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleIdForProperty2 = this.handleIdForProperty2.bind(this);
+  }
+
+  handleValue = (id) => {
+    this.setState({
+      cityId: id,
+    });
+  };
+  handleChange = (newDate) => {
+    this.setState({
+      startDateValue: newDate,
+    });
+  };
+  handleEndDate = (newDate) => {
+    this.setState({
+      endDateVal: newDate,
+    });
+  };
+
+  handleOnChange = (city) => {
+    this.setState({
+      cityName: city,
+    });
+  };
+  handleIdForProperty2 = (id) => {
+    this.setState({
+      idValue: id,
+    });
+  };
+
+<<<<<<< HEAD
+handleValue = (id, name) =>{
+  console.log(id);
+  console.log(name);
+  localStorage.setItem("cityid", id);
+  localStorage.setItem("cityName", name);
+  this.props.history.push(`/property/${(name).toLowerCase()}`);
+};
+
+
+=======
+  handleNoDays = (days) => {
+    console.log("days", days);
+    this.setState({
+      noDays: days,
+    });
+  };
+  handleDiscountPrice = (price) => {
+    console.log("Discount price in header", price);
+    this.setState({
+      discountPrice: price,
+    });
+    console.log("Discount price in header after setting state", price);
+  };
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+
+  async componentDidMount() {
+    const resp = await axios.get(
+      `http://34.93.89.207/olive_api/public/api/cities`
+    );
+    const value = resp.data;
+    this.setState({
+      cities: resp.data,
+    });
+  }
+  logout() {
+    localStorage.removeItem("login");
+    this.props.history.push("/");
+  }
+  render() {
+    return (
+      <Router history={history}>
+        <section className="mobview">
+          <Mobheader />
+        </section>
+        <section className="deskview">
+          <Navbar expand="lg">
+            <Nav className="ml-auto desk-navbar navigation">
+<<<<<<< HEAD
+              <NavDropdown title="Cities" id="basic-nav-dropdown"
+              >
+                {this.state.cities.map(city => {
+                  return(<NavDropdown.Item
+                    onClick={() => {
+                      localStorage.setItem("cityid", city.id);
+                      localStorage.setItem("cityName", city.city_name);
+                      history.push(`/property/${(city.city_name).toLowerCase()}`);
+                      // this.handleValue(city.id, city.city_name);
+                    }}
+                    >
+                    {city.city_name}
+                  </NavDropdown.Item>);
+=======
+              <NavDropdown
+                title="Cities"
+                id="basic-nav-dropdown"
+                onChange={this.handleOnChange}
+              >
+                {this.state.cities.map((city) => {
+                  return <NavDropdown.Item>{city.city_name}</NavDropdown.Item>;
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+                })}
+                {/* <NavDropdown.Item href="#action/3.1">Delhi</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Noida</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Gurugram</NavDropdown.Item> */}
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Seperate apartment
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="#">
+                <img
+                  className="nav-icon"
+                  src={require("../../assets/Call.png")}
+                />{" "}
+                9015080080
+              </Nav.Link>
+              <Navbar.Brand href="/">
+                <img
+                  className="brand-logo"
+                  src={require("../../assets/olive-logo.png")}
+                />{" "}
+              </Navbar.Brand>
+
+              {localStorage.getItem("login") ? (
+                <React.Fragment>
+                  {" "}
+                  <Nav.Link href="/reservation">Reservation</Nav.Link>
+                  <NavDropdown title="Account" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => this.logout()}>
+                      Logout
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <Nav.Link href="/register">Register</Nav.Link>
+                  <Nav.Link href="/login" className="login-btn">
+                    Login
+                  </Nav.Link>
+                </React.Fragment>
+              )}
+            </Nav>
+          </Navbar>
+<<<<<<< HEAD
+          </section>
+        
+           
+          <Switch>
+          <Route 
+          exact 
+          path="/"
+          render={props => (
+            <Home {...props}
+            handleValue={this.handleValue}
+            handleChange={this.handleChange}
+            handleEndDate={this.handleEndDate}
+            handleOnChange={this.handleOnChange} />
+          )} />
+          <Route 
+          exact 
+          path={`/property/:cityId`}
+          render={props => (
+            <Apartmentlisting 
+            {...props}
+            cityID={this.state.cityId}
+            startDateValue={this.state.startDateValue}
+            endDateVal={this.state.endDateVal}
+            cityName={this.state.cityName}
+            handleIdForProperty11={this.handleIdForProperty2}
+            name={this.state.name}
+            ref={this.child}
+            />
+          )} />
+          <Route 
+          exact 
+          path="/detail/page" 
+          render={props => (
+            <ApartmentDetailPage 
+            {...props}
+            idVal={this.state.idValue}
+            />
+          )}/>
+          <Route 
+          exact 
+          path="/register" 
+          render={props => (
+            <Registerpage {...props}/>
+          )} />
+          <Route 
+          exact 
+          path="/login" 
+          render={props => (
+            <Loginpage {...props}/>
+          )} />
+          <Route exact path="/checkout"
+          render={props => (
+            <Checkoutpage {...props}
+            days={this.state.noDays}
+            discountPrice={this.state.discountPrice}/>
+          )}>
+          </Route>
+          <Route exact path="/thankyou"
+          render={props => (
+            <Thankyoupage {...props}
+            handleGoToReservation={this.handleGoToReservation}/>
+          )}>
+          </Route>
+=======
+        </section>
+
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Home
+                {...props}
+                handleValue={this.handleValue}
+                handleChange={this.handleChange}
+                handleEndDate={this.handleEndDate}
+                handleOnChange={this.handleOnChange}
+              />
+            )}
+          />
+          <Route
+            exact
+            path={`/property/:cityId`}
+            render={(props) => (
+              <Apartmentlisting
+                {...props}
+                cityID={this.state.cityId}
+                startDateValue={this.state.startDateValue}
+                endDateVal={this.state.endDateVal}
+                cityName={this.state.cityName}
+                handleIdForProperty11={this.handleIdForProperty2}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/detail/page"
+            render={(props) => (
+              <ApartmentDetailPage {...props} idVal={this.state.idValue} />
+            )}
+          />
+          <Route
+            exact
+            path="/register"
+            render={(props) => <Registerpage {...props} />}
+          />
+          <Route
+            exact
+            path="/login"
+            render={(props) => <Loginpage {...props} />}
+          />
+          <Route
+            exact
+            path="/checkout"
+            render={(props) => (
+              <Checkoutpage
+                {...props}
+                days={this.state.noDays}
+                discountPrice={this.state.discountPrice}
+              />
+            )}
+          ></Route>
+          <Route
+            exact
+            path="/thankyou"
+            render={(props) => (
+              <Thankyoupage
+                {...props}
+                handleGoToReservation={this.handleGoToReservation}
+              />
+            )}
+          ></Route>
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+          <Route
+            exact
+            path="/reservation/:bookingId"
+            render={(props) => <Reservationpage {...props} />}
+          ></Route>
+          <Route
+            exact
+            path="/upsell"
+            render={(props) => (
+              <Upsellpage
+                {...props}
+                handleNoDays={this.handleNoDays}
+                handleDiscountPrice={this.handleDiscountPrice}
+                discountPrice={this.state.discountPrice}
+                days={this.state.noDays}
+              />
+            )}
+          ></Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/offers">
+            <Offers />
+          </Route>
+          <Route exact path="/faqs">
+            <Faqs />
+          </Route>
+          <Route exact path="/booking">
+            <Booking />
+          </Route>
+          <Route exact path="/terms-and-conditions">
+            <Terms />
+          </Route>
+          <Route exact path="/privacy-policy">
+            <Privacypolicy />
+          </Route>
+          <Route exact path="/refund-cancellation">
+            <Refundpolicy />
+          </Route>
+          <Route exact path="/lowest-price-guarantee">
+            <Lowprice />
+          </Route>
+          <Route exact path="/contact-us">
+            <Contactus />
+          </Route>
+          <Route exact path="/online-payment">
+            <Onlinepayment />
+          </Route>
+          <Route exact path="/direct-payment">
+            <Directpayment />
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
+}
+export default Header;

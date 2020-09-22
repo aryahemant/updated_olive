@@ -1,0 +1,28 @@
+.brand-logo{width: 170px;}
+.navbar{padding: 20px 1rem;}
+.desk-navbar{margin-right: auto;}
+.navbar-light .navbar-nav .nav-link{line-height: 40px;
+color: #5DB64C;
+font-weight: 500;
+margin-left: 50px;
+margin-right: 50px;}
+.city-dropdown{width: auto;
+    min-width: 200px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    top: 73px;
+    opacity: 0;
+    background: #fff;}
+.city:hover .city-dropdown{opacity: 1;}
+.nav-icon{width: 24px;
+margin-right: 10px;}
+.navigation .login-btn{
+    height: 40px;
+    border: 1px solid;
+    line-height: 21px !important;
+    width: 100px;
+    text-align: center;
+    margin-top: 7px;
+    transition: .2s ease-in;
+}

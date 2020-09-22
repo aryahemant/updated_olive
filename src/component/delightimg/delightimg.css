@@ -1,0 +1,13 @@
+.delightimage img{width: 100%;
+   
+}
+@media only screen and (max-width: 990px){
+    .delight-mob-width{
+        float: left;
+        width: 280px;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+   }
+    
+}
+

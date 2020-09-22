@@ -1,0 +1,28 @@
+.offer-card{border-radius: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;}
+.offer-card-overlay{padding: 30px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#299a0b+0,0b7709+100&0.4+0,0.7+99 */
+background: -moz-linear-gradient(top,  rgba(41,154,11,0.4) 0%, rgba(11,119,9,0.7) 99%, rgba(11,119,9,0.7) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(41,154,11,0.4) 0%,rgba(11,119,9,0.7) 99%,rgba(11,119,9,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(41,154,11,0.4) 0%,rgba(11,119,9,0.7) 99%,rgba(11,119,9,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66299a0b', endColorstr='#b30b7709',GradientType=0 ); /* IE6-9 */
+ 
+}
+.offer-card-heading{
+    margin-top:100px; 
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;}
+.offer-card-desc{color: #fff;
+    line-height: 20px;
+    color: #ffffffcf;}
+.offer-card-btn{
+    padding: 10px 40px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none !important;
+    display: inline-block;
+    text-transform: uppercase;
+}

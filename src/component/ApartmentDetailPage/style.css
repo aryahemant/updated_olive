@@ -1,0 +1,129 @@
+.owl-item .item {
+  height: 180px;
+}
+/* .owl-item .item:hover{
+    cursor: pointer;
+} */
+.owl-item .item img {
+  height: 100%;
+}
+.ant-modal {
+  width: 700px;
+}
+.ant-modal .owl-item .item {
+  height: 400px;
+}
+/* .apartment-detail-tab .apt-det-img-gal .owl-nav{
+    position: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    top: inherit;
+    width: 80px;
+} */
+.striked-start-price {
+  font-size: 34px;
+  line-height: 30px;
+}
+.apar-short-desc {
+  font-size: 14px;
+  line-height: 22px;
+}
+.viewgallery {
+  padding: 5px 30px;
+  font-size: 16px;
+  width: 100%;
+  line-height: 16px;
+  background-color: #5db64c;
+  color: #fff;
+  font-family: "SharpSans-Medium";
+  text-transform: uppercase;
+  border: 0;
+}
+.ant-btn-primary {
+  display: none;
+}
+.ant-modal .owl-prev {
+  float: left;
+  background: #000000b8 !important;
+  border-radius: 50% !important;
+  width: 30px;
+  color: #fff !important;
+  height: 30px;
+}
+.ant-modal .owl-next {
+  float: right;
+  background: #000000b8 !important;
+  border-radius: 50% !important;
+  width: 30px;
+  color: #fff !important;
+  height: 30px;
+}
+.ant-modal .owl-prev span,
+.ant-modal .owl-next span {
+  font-size: 30px;
+  line-height: 20px;
+}
+.ant-modal .owl-dots {
+  margin-top: 25px;
+}
+/* .ant-modal  .owl-nav{position: absolute;
+        top: 50px;
+        width: 100%;} */
+.accordion {
+  margin-bottom: 15px;
+}
+.owl-carousel.owl-hidden {
+  opacity: inherit !important;
+}
+.short-text {
+  width: 100% !important;
+}
+.longdecspan p {
+  font-size: 14px;
+  color: #242424;
+  font-family: "SharpSans-Medium";
+  margin-bottom: 4px;
+  float: left;
+}
+.long-dec-show p {
+  color: #242424;
+  font-family: "SharpSans-Medium";
+  margin-bottom: 4px;
+  float: left;
+  font-size: 14px;
+}
+
+/* .long-dec-show {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 13ch;
+} */
+.readmorebtn {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  color: #5db64c !important;
+  display: block;
+}
+.testimonialtxt {
+  color: #242424;
+  font-family: "SharpSans-Medium";
+  margin-bottom: 4px;
+  float: left;
+  font-size: 14px;
+}
+.testemonialtheme .owl-item {
+  background: #fff;
+  padding: 10px;
+  height: 470px;
+}
+.testimonialtxttitle {
+  color: #68bc5b;
+  font-family: "SharpSans-Medium";
+  margin-bottom: 4px;
+  float: left;
+  font-size: 14px;
+  font-weight: 800;
+}

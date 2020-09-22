@@ -1,0 +1,42 @@
+.addamentycard{
+    background-color: #fff;
+    box-shadow: 0 33px 76px 10px rgba(0,0,0,0.07);
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+   
+}
+
+/* .amenty-img{
+    float: left;
+    width: 50px;
+    border: 1px solid;
+    text-align: center;
+}
+.amenty-desc {
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+} */
+.amenty-price{width: 100%;
+display: inline-block;}
+.amenty-desc p:first-child{margin-top: 4px;}
+.amenty-desc p{
+    margin-bottom: 5px;
+
+} 
+.amenty-price p{
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: 12px;
+}
+.amenty-price button{
+    display: inline-block;
+    float: right;
+}
+.colorchange{background: red}
+.amenty-img{padding-right: 0;}
+.amenty-img img{width: 100%;}
+.getmore p{margin-top: 0;}
+.getmore p strike{color: red}

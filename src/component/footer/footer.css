@@ -1,0 +1,45 @@
+.footer-section{
+   background-color: #242424;
+   padding-top: 45px;
+   padding-bottom: 200px;
+   position: relative;
+}
+.footer-section{background-image:url('../../assets/Cityscape_Footer.png');
+    background-position-y: bottom;
+    background-repeat: no-repeat; }
+
+.footer-logo{width: 170px;}
+.social-icon-list{padding: 0;
+list-style: none;
+margin-top: 30px;
+}
+.social-icon-list li i{color: #5DB64C;
+font-size:35px; }
+.social-icon-list li{display: inline-block;
+margin-right: 30px;}
+.footer-menu{
+    color: #fff;
+    padding:0;
+    list-style: none;
+}
+.footer-menu li{margin-bottom: 5px;
+    text-transform: uppercase;}
+.footer-menu li a{font-family: 'SharpSans-Medium';
+color: #fff;}
+.footer-menu li a:hover{color: #5DB64C;}
+.footer-menu-title{font-family: 'SharpSans-Medium';
+    color: #5DB64C;}
+.footer-city-img{bottom: 0;
+width: 50%;
+position: absolute;}
+.footer-city-img img{width: 100%;}
+
+@media only screen and (max-width: 990px){
+    .footer-city-img{width: 100%;}
+    .footer-section{
+         padding-bottom: 150px;
+    }
+    .footer-section{
+        background-size:contain; 
+   }
+}

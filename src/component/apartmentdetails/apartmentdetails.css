@@ -1,0 +1,16 @@
+
+.apartmentdetails .icon-list  span{
+display: inline-block;
+float: left;
+margin-right: 5px;
+}
+.apartmentdetails .p2 p{font-size: 14px !important;
+    line-height: 18px;
+}
+.apartmentdetails .icon-list p{font-size: 12px;
+    float: left;
+    font-family: 'SharpSans-Medium';
+    line-height: 30px; 
+    color: #242424;}
+.apartmentdetails-price{
+margin-bottom: 10px;}

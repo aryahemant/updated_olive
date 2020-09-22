@@ -1,0 +1,12 @@
+.whyolive-img img{
+    width: 100%;
+    object-fit: cover;
+}
+.why-olive-desc p{
+font-family: 'SharpSans-Bold';
+font-size: 16px;
+line-height: 18px;
+margin-bottom: 0;
+}
+.why-olive-desc{padding: 15px 5px;}
+.whyolive-card{margin-bottom: 15px;}

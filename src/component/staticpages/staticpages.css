@@ -1,0 +1,58 @@
+.font-ita {
+  font-style: italic;
+}
+.static-list {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.static-links {
+  color: #5db64c;
+}
+.static-links:hover {
+  color: #222222;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+.underline {
+  text-decoration: underline;
+}
+.lower-latin {
+  list-style: lower-latin;
+}
+.static-page-card {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.24);
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.contact-list i {
+  color: #5db64c;
+  margin-right: 10px;
+}
+.rot-90 {
+  transform: rotate(90deg);
+}
+.contactus-form .selection {
+  font-size: 16px;
+  border: 1px solid #000000ab !important;
+}
+.paymentbooking {
+  text-align: center !important;
+  font-size: 20px;
+  color: red;
+  width: 100%;
+  border: 36px;
+}
+.font-loaded #merchant-desc {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 0.8;
+  white-space: break-spaces !important;
+  color: blue;
+}

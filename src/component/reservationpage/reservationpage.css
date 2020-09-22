@@ -1,0 +1,108 @@
+.upcoming-tab .apt-det-title {
+  font-family: "SharpSans-Medium";
+  font-size: 27px;
+  line-height: 30px;
+  word-spacing: 2px;
+}
+.reserve-img {
+  height: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.reserve-img img {
+  height: 100%;
+  object-fit: cover;
+}
+.upcoming-tab p.date-guest {
+  margin-bottom: 0;
+  padding-left: 34px;
+  position: relative;
+  line-height: 34px;
+}
+.upcoming-tab .date-guest img {
+  width: 25px;
+  top: 4px;
+  left: 0;
+  position: absolute;
+}
+.cancel-res {
+  margin-top: 30px;
+  font-family: "SharpSans-Bold";
+  text-transform: uppercase;
+  border: 2px solid #ff0000;
+  background: transparent;
+  color: #ff0000;
+  border-radius: 0;
+  padding: 10px 25px;
+}
+.cancel-res:hover {
+  background: #ff0000;
+  color: #fff;
+  border: 2px solid #ff0000;
+}
+.font-16 {
+  font-size: 16px;
+  line-height: 18px;
+}
+.reserv-detail .deals-card {
+  background: #5db64c;
+}
+.reserv-detail .deals-card .deals-card-left {
+  width: 60%;
+}
+.reserv-detail .deals-card .deals-card-right {
+  width: 40%;
+}
+.reserv-detail .deals-card .deals-hr {
+  margin-bottom: 15px;
+}
+.reserv-detail .deals-card .deal-price {
+  margin-top: 36px;
+  margin-bottom: inherit;
+  font-size: 28px !important;
+}
+section.reservationpageback {
+  background-image: url("../../assets/BG.jpg");
+  background-size: cover;
+  background-position: 0;
+}
+.reservationpageback {
+  padding-bottom: 100px;
+}
+
+.amenties {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.amenties li {
+  width: 50%;
+  display: inline-block;
+}
+.amentiesdet {
+  font-size: 12px;
+  margin-top: -8px;
+  line-height: 20px;
+}
+.leftamenity {
+  width: 70%;
+  display: inline-block;
+}
+.mobile {
+  display: none !important;
+}
+@media only screen and (max-width: 990px) {
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+}
+.upcoming-tab {
+  display: none;
+}
+.description p {
+  font-size: 16px !important;
+  line-height: 22px !important;
+}

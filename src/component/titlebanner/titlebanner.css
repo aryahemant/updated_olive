@@ -1,0 +1,9 @@
+.titlebanner{width: 100%;
+height: 300px;}
+.titlebanner img{width: 100%;
+height: 100%;
+object-fit: cover;}
+
+@media only screen and (max-width: 990px){
+    .titlebanner{height: 150px;}
+}

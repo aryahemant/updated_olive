@@ -1,0 +1,512 @@
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./dealscard.css";
+import Carousel from "react-bootstrap/Carousel";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import moment from "moment";
+import { Modal } from "antd";
+// import { Route, withRouter } from "react-dom";
+
+class Dealscard extends Component {
+  state = { visible: false };
+  constructor(props) {
+    super(props);
+    this.state = {
+      apartmentTitle: "",
+      nobeds: "",
+      nobath: "",
+      cancelType: "",
+      cancelTypeImage: "",
+      dealPrice: "",
+      apartmentName: "",
+      apartmentImage: "",
+      stdToSupPrice: "",
+      stdToSupPriceFree: "",
+      supToPre: "",
+      supToPreFree: "",
+    };
+  }
+  showModal = (name) => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      // apartmentImage={this.state.prope
+      visible: false,
+    });
+  };
+  componentDidMount() {
+    // axios.get(`/be/products/getAll.json`).then(res => {
+    //     console.log('result', res.data)
+    // })
+  }
+
+  render() {
+<<<<<<< HEAD
+    return this.props.price ? (
+      this.props.idx === 0 && localStorage.getItem("noGuest") > 2 ? (
+        <React.Fragment>
+          <div className="fl-100 deals-card">
+            <div className="deals-card-left">
+              <p className="p2 deal-type">{this.props.deal_type}</p>
+              <div className="deals-hr"></div>
+              <p className="deal-price fw-700">
+                &#8377; {this.props.price}{" "}
+                <sup className="">
+                  <strike>&#8377; {this.props.real_price}</strike>
+                </sup>
+                <span>/ night</span>
+              </p>
+              <p className="cancel-type">
+                <img className="" src={this.props.cancel_type_img} />
+                {this.props.cancel_type}
+              </p>
+            </div>
+            <div className="deals-card-right text-right">
+              <p className="cancel-type">
+                <img
+                  className=""
+                  src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+                />
+                {this.props.peymentMethod}
+              </p>
+              <button
+                className="book-btn"
+                onClick={() => alert("only 2 guests allowed")}
+              >
+                Book
+              </button>
+            </div>
+          </div>
+        </React.Fragment>
+      ) : this.props.idx === 1 && localStorage.getItem("noGuest") > 5 ? (
+        <React.Fragment>
+          <div className="fl-100 deals-card">
+            <div className="deals-card-left">
+              <p className="p2 deal-type">{this.props.deal_type}</p>
+              <div className="deals-hr"></div>
+              <p className="deal-price fw-700">
+                &#8377; {this.props.price}{" "}
+                <sup className="">
+                  <strike>&#8377; {this.props.real_price}</strike>
+                </sup>
+                <span>/ night</span>
+              </p>
+              <p className="cancel-type">
+                <img className="" src={this.props.cancel_type_img} />
+                {this.props.cancel_type}
+              </p>
+            </div>
+            <div className="deals-card-right text-right">
+              <p className="cancel-type">
+                <img
+                  className=""
+                  src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+                />
+                {this.props.peymentMethod}
+              </p>
+              <button
+                className="book-btn"
+                onClick={() => alert("only 5 guests allowed")}
+              >
+                Book
+              </button>
+            </div>
+          </div>
+        </React.Fragment>
+      ) : this.props.idx === 2 && localStorage.getItem("noGuest") > 8 ? (
+        <React.Fragment>
+          <div className="fl-100 deals-card">
+            <div className="deals-card-left">
+              <p className="p2 deal-type">{this.props.deal_type}</p>
+              <div className="deals-hr"></div>
+              <p className="deal-price fw-700">
+                &#8377; {this.props.price}{" "}
+                <sup className="">
+                  <strike>&#8377; {this.props.real_price}</strike>
+                </sup>
+                <span>/ night</span>
+              </p>
+              <p className="cancel-type">
+                <img className="" src={this.props.cancel_type_img} />
+                {this.props.cancel_type}
+              </p>
+            </div>
+            <div className="deals-card-right text-right">
+              <p className="cancel-type">
+                <img
+                  className=""
+                  src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+                />
+                {this.props.peymentMethod}
+              </p>
+              <button
+                className="book-btn"
+                onClick={() => alert("only 8 guests allowed")}
+              >
+                Book
+              </button>
+            </div>
+          </div>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <div className="fl-100 deals-card">
+            <div className="deals-card-left">
+              <p className="p2 deal-type" onClick={this.showModal}>
+                {this.props.deal_type}
+                <i class="fa fa-info-circle info-icon" aria-hidden="true"></i>
+              </p>
+              {/* <div className="deals-hr"></div> */}
+              <p className="deal-price fw-700">
+                &#8377; {this.props.price}{" "}
+                <span className="strike-price">
+                  <strike>&#8377; {this.props.real_price}</strike>
+                </span>
+                <span className="per-night">/ night</span>
+              </p>
+              {/* <p className="deal-price fw-700">
+                &#8377; {this.props.price}{" "}
+                <sup className="">
+                  <strike>&#8377; {this.props.real_price}</strike>
+                </sup>
+                <span>/ night</span>
+              </p> */}
+              <p className="cancel-type" onClick={this.showModal}>
+                <img className="" src={this.props.cancel_type_img} />
+                {this.props.cancel_type}
+                <i class="fa fa-info-circle info-icon" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div className="deals-card-right text-right">
+              <p className="cancel-type mb-30" onClick={this.showModal}>
+                <img
+                  className=""
+                  src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+                />
+                {this.props.peymentMethod}
+                <i class="fa fa-info-circle info-icon" aria-hidden="true"></i>
+              </p>
+              <button
+                className="book-btn"
+                onClick={() => {
+                  localStorage.setItem("dealType", this.props.deal_type);
+                  localStorage.setItem(
+                    "apartmentTitle",
+                    this.props.apart_cat_title
+                  );
+                  localStorage.setItem("nobeds", this.props.nobeds);
+                  localStorage.setItem("nobath", this.props.nobath);
+                  localStorage.setItem("cancelType", this.props.cancel_type);
+                  localStorage.setItem(
+                    "cancelTypeImage",
+                    this.props.cancel_type_img
+                  );
+                  localStorage.setItem("dealPrice", this.props.deal_price);
+                  localStorage.setItem("dealprice", this.props.deal_price);
+                  localStorage.setItem(
+                    "apartmentName",
+                    this.props.apartmentName
+                  );
+                  localStorage.setItem(
+                    "apartmentImage",
+                    this.props.apartmentImage
+                  );
+                  localStorage.setItem(
+                    "stdToSupHot",
+                    this.props.deal_price_sup
+                  );
+                  localStorage.setItem(
+                    "stdToSupHotFree",
+                    this.props.deal_price_sup_free
+                  );
+                  localStorage.setItem(
+                    "supToPre",
+                    this.props.deal_price_sup_pre
+                  );
+                  localStorage.setItem(
+                    "supToPreFree",
+                    this.props.deal_price_sup_pre_free
+                  );
+                  localStorage.setItem(
+                    "deal_price_pre",
+                    this.props.deal_price_pre
+                  );
+                  localStorage.setItem(
+                    "deal_price_pre_free",
+                    this.props.deal_price_pre_free
+                  );
+                  localStorage.setItem("property_id", this.props.property_id);
+                  localStorage.setItem("roomType_id", this.props.roomType_id);
+                  localStorage.setItem("clealing_fee", this.props.clealing_fee);
+                  localStorage.setItem("price", this.props.price1);
+                  localStorage.setItem("price_type", this.props.price_type);
+                  this.props.handleClick();
+                }}
+                disabled={!this.props.price}
+              >
+                Book
+              </button>
+
+              <Modal
+                width={700}
+                visible={this.state.visible}
+                onCancel={this.handleCancel}
+              >
+                <p className="mb-15">
+                  <strong>Details for Hot Deal</strong>
+                </p>
+                <p className="p2">
+                  Book directly on our website to get the HOTTEST Deal for this
+                  apartment!
+                </p>
+                <p className="p2">
+                  It is the Lowest Possible Rate for this Apartment that you get
+                  only when you book directly online through the OLIVE website
+                  here, backed by our Lowest Price Guarantee - we guarantee that
+                  you will NOT find a lower rate for this apartment!
+                </p>
+                <p className="p2">
+                  If you book online with us and find a better price anywhere
+                  else online within 24 hours, let us know and we will: * Honour
+                  the lower rate and * Upgrade your Apartment to the next
+                  category, completely free of charge.
+                </p>
+                <p className="p2">
+                  You can know more about our Lowest Price Guarantee at -
+                  https://www.oliveservicedapartments.com/lowest-price-guarantee
+                </p>
+                <p className="p2">
+                  CANCELLATION POLICY - Please note, this reservation is
+                  completely non-modifiable and non-cancellable. If it is
+                  cancelled, modified or in case of no-show, the total price of
+                  the reservation will be charged.
+                </p>
+                <p className="p2">
+                  PRE-PAYMENT POLICY - The total price of the reservation will
+                  be charged at the time of booking.
+                </p>
+              </Modal>
+            </div>
+          </div>
+        </React.Fragment>
+=======
+    return (
+      this.props.price ?
+      (this.props.idx===0 && localStorage.getItem("noGuest")>this.props.noguest ?
+      <React.Fragment>
+        <div className="fl-100 deals-card">
+        <div className="deals-card-left">
+          <p className="p2 deal-type">{this.props.deal_type}</p>
+          <div className="deals-hr"></div>
+          <p className="deal-price fw-700">
+          &#8377; {this.props.price}{" "}
+            <sup className="">
+              <strike>&#8377; {this.props.real_price}</strike>
+            </sup>
+            <span>/ night</span>
+          </p>
+          <p className="cancel-type">
+            <img className="" src={this.props.cancel_type_img} />
+            {this.props.cancel_type}
+          </p>
+        </div>
+        <div className="deals-card-right text-right">
+          <p className="cancel-type">
+            <img
+              className=""
+              src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+            />
+            {this.props.peymentMethod}
+          </p>
+          <button className="book-btn" 
+          onClick={() => alert(`only ${this.props.noguest} guests allowed`)}>
+            Book
+          </button>
+        </div>
+      </div>
+      </React.Fragment>
+      :
+      this.props.idx===1 && localStorage.getItem("noGuest")>this.props.noguest ?
+      <React.Fragment>
+      <div className="fl-100 deals-card">
+      <div className="deals-card-left">
+        <p className="p2 deal-type">{this.props.deal_type}</p>
+        <div className="deals-hr"></div>
+        <p className="deal-price fw-700">
+        &#8377; {this.props.price}{" "}
+          <sup className="">
+            <strike>&#8377; {this.props.real_price}</strike>
+          </sup>
+          <span>/ night</span>
+        </p>
+        <p className="cancel-type">
+          <img className="" src={this.props.cancel_type_img} />
+          {this.props.cancel_type}
+        </p>
+      </div>
+      <div className="deals-card-right text-right">
+        <p className="cancel-type">
+          <img
+            className=""
+            src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+          />
+          {this.props.peymentMethod}
+        </p>
+        <button className="book-btn" 
+        onClick={() => alert(`only ${this.props.noguest} guests allowed`)}>
+          Book
+        </button>
+      </div>
+    </div>
+    </React.Fragment>
+    :
+    this.props.idx===2 && localStorage.getItem("noGuest")>this.props.noguest ?
+    <React.Fragment>
+    <div className="fl-100 deals-card">
+    <div className="deals-card-left">
+      <p className="p2 deal-type">{this.props.deal_type}</p>
+      <div className="deals-hr"></div>
+      <p className="deal-price fw-700">
+      &#8377; {this.props.price}{" "}
+        <sup className="">
+          <strike>&#8377; {this.props.real_price}</strike>
+        </sup>
+        <span>/ night</span>
+      </p>
+      <p className="cancel-type">
+        <img className="" src={this.props.cancel_type_img} />
+        {this.props.cancel_type}
+      </p>
+    </div>
+    <div className="deals-card-right text-right">
+      <p className="cancel-type">
+        <img
+          className=""
+          src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+        />
+        {this.props.peymentMethod}
+      </p>
+      <button className="book-btn" 
+      onClick={() => alert(`only ${this.props.noguest} guests allowed`)}>
+        Book
+      </button>
+    </div>
+  </div>
+  </React.Fragment>
+  :
+      <React.Fragment>
+        <div className="fl-100 deals-card">
+        <div className="deals-card-left">
+          <p className="p2 deal-type">{this.props.deal_type}</p>
+          <div className="deals-hr"></div>
+          <p className="deal-price fw-700">
+            &#8377; {this.props.price}{" "}
+            <sup className="">
+              <strike>&#8377; {this.props.real_price}</strike>
+            </sup>
+            <span>/ night</span>
+          </p>
+          <p className="cancel-type">
+            <img className="" src={this.props.cancel_type_img} />
+            {this.props.cancel_type}
+          </p>
+        </div>
+        <div className="deals-card-right text-right">
+          <p className="cancel-type">
+            <img
+              className=""
+              src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+            />
+            {this.props.peymentMethod}
+          </p>
+          <button
+            className="book-btn"
+            onClick={() => {
+              localStorage.setItem("dealType", this.props.deal_type);
+              localStorage.setItem(
+                "apartmentTitle",
+                this.props.apart_cat_title
+              );
+              localStorage.setItem("nobeds", this.props.nobeds);
+              localStorage.setItem("nobath", this.props.nobath);
+              localStorage.setItem("cancelType", this.props.cancel_type);
+              localStorage.setItem(
+                "cancelTypeImage",
+                this.props.cancel_type_img
+              );
+              localStorage.setItem("dealPrice", this.props.deal_price);
+              localStorage.setItem("dealprice", this.props.deal_price);
+              localStorage.setItem("apartmentName", this.props.apartmentName);
+              localStorage.setItem("apartmentImage", this.props.apartmentImage);
+              localStorage.setItem("stdToSupHot", this.props.deal_price_sup);
+              localStorage.setItem(
+                "stdToSupHotFree",
+                this.props.deal_price_sup_free
+              );
+              localStorage.setItem("supToPre", this.props.deal_price_sup_pre);
+              localStorage.setItem(
+                "supToPreFree",
+                this.props.deal_price_sup_pre_free
+              );
+              localStorage.setItem("deal_price_pre", this.props.deal_price_pre);
+              localStorage.setItem(
+                "deal_price_pre_free",
+                this.props.deal_price_pre_free
+              );
+              localStorage.setItem("property_id", this.props.property_id);
+              localStorage.setItem("roomType_id", this.props.roomType_id);
+              localStorage.setItem("clealing_fee", this.props.clealing_fee);
+              localStorage.setItem("price", this.props.price1);
+              localStorage.setItem("price_type", this.props.price_type);
+              this.props.handleClick();
+            }}
+            disabled={!this.props.price}
+          >
+            Book
+          </button>
+        </div>
+      </div>
+      </React.Fragment>
+>>>>>>> abb81183a6f5da007e490bb2ab01d69b5d9bcc8b
+      )
+    ) : (
+      <React.Fragment>
+        <div className="fl-100 deals-card">
+          <div className="deals-card-left">
+            <p className="p2 deal-type">{this.props.deal_type}</p>
+            <div className="deals-hr"></div>
+            <p className="deal-price fw-700">
+              Sold out{" "}
+              <sup className="">
+                <strike></strike>
+              </sup>
+              <span></span>
+            </p>
+            <p className="cancel-type">
+              <img className="" src={this.props.cancel_type_img} />
+              {this.props.cancel_type}
+            </p>
+          </div>
+          <div className="deals-card-right text-right">
+            <p className="cancel-type">
+              <img
+                className=""
+                src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+              />
+              {this.props.peymentMethod}
+            </p>
+            <button className="book-btn" disabled={!this.props.price}>
+              Book
+            </button>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+export default Dealscard;

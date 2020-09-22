@@ -1,0 +1,54 @@
+.login-title {
+  line-height: 40px;
+  margin-bottom: 30px !important;
+}
+.registerform .button {
+  padding: 15px 30px;
+  font-size: 16px;
+  line-height: 16px;
+  background-color: #5db64c;
+  color: #fff;
+  font-family: "SharpSans-Medium";
+  text-transform: uppercase;
+  border: 0;
+}
+.registerform .button:hover {
+  background-color: #5db64c;
+  color: #fff;
+}
+.registerform.form .field > label {
+  font-size: 16px;
+  font-family: "SharpSans-Bold";
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 16px;
+}
+.registerform input,
+.registerform textarea,
+.registerform .checkbox {
+  margin-bottom: 30px !important;
+  font-size: 16px !important;
+  font-family: "SharpSans-Semibold" !important;
+  background: transparent !important;
+}
+.registerform input,
+.registerform textarea {
+  border: 1px solid #000000ab !important;
+}
+.registerform textarea {
+  resize: none !important;
+}
+.registerform .checkbox input.hidden + label {
+  line-height: 24px !important;
+}
+.registerform .checkbox label:before {
+  top: 5px !important;
+}
+.errormsg {
+  text-align: center;
+  color: red;
+  width: 100%;
+  margin-bottom: 20px;
+}

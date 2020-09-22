@@ -1,0 +1,13 @@
+.olive-feaure-heading{margin-top:20px !important;
+margin-bottom: 10px; }
+.feature-card{padding-left: 10px;
+padding-right: 10px;}
+@media only screen and (max-width: 990px){
+    .feature-card {padding-left: 0;
+    padding-right: 0}
+    .feature-card img{width: 30px;} 
+    .feature-card-text{font-size: 12px;
+        line-height: 18px;} 
+    .feature-section .col-4{padding-left:7.5px;
+    padding-right:7.5px;  }
+}

@@ -1,0 +1,733 @@
+import React from "react";
+import Header from "../header/header";
+import Map from "../map/map";
+import Apartmentdetails from "../apartmentdetails/apartmentdetails";
+import Dealscard from "../dealscard/dealscard";
+import Detailsearch from "../detailsearch/detailsearch";
+import Apartmentcategory from "../apartmentcategory/apartmentcategory";
+import Apartmentdetailstitle from "../apartmentdetailstitle/apartmentdetailstitle";
+import Titlebanner from "../titlebanner/titlebanner";
+import "./reservationpage.css";
+import ReadMoreAndLess from "react-read-more-less";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import OwlCarousel from "react-owl-carousel";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import Modal from "react-bootstrap/Modal";
+import Locations from "../locations/locations";
+import Heading from "../heading/heading";
+
+import axios from "axios";
+import moment from "moment";
+import SweetAlert from "react-bootstrap-sweetalert";
+
+
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+  Button,
+  Form,
+  FormControl,
+  Tab,
+  Tabs,
+} from "react-bootstrap";
+import { Rate } from "antd";
+
+class Reservationpage extends React.Component {
+<<<<<<< HEAD
+
+    constructor(props) {
+        super(props)
+        this.state = {
+          bookingid : props.match.params.bookingId,
+          reservationBookingData: [],
+          reservationpropertyData: [],
+          discount: 'Discount',
+          alert: null
+    
+        }
+    
+      }
+      CancelRequest() {
+        const getAlert = () => (
+      
+          <SweetAlert 
+          confirmBtnBsStyle='success'
+            success 
+            title="Successfully Cancelled" 
+            onConfirm={() => this.hideAlert()}
+          >
+          <p className="p2">
+           Hello! Your booking cancellation request has been forwarded to our customer support. We will be calling you shortly for confirmation.</p>
+          </SweetAlert>
+        );
+    
+        this.setState({
+          alert: getAlert()
+        });
+      }
+    
+      hideAlert() {
+        console.log('Hiding alert...');
+        this.setState({
+          alert: null
+        });
+      }
+      async componentDidMount() {
+        const USER_TOKEN = JSON.parse(localStorage.getItem('login'));
+      console.log(USER_TOKEN);
+      const AuthStr = 'Bearer '.concat(USER_TOKEN);
+        console.log(`http://34.93.89.207/olive_api/public/api/booking/${this.state.bookingid}`);
+        // const response = axios.get(`http://34.93.89.207/olive_api/public/api/booking/ &#8377;{this.state.bookingid}`,{
+        // headers: { Authorization: AuthStr }});
+        await axios.get(`http://34.93.89.207/olive_api/public/api/booking/${this.state.bookingid}`, {
+          headers: { Authorization: AuthStr }
+              })
+              .then(res => {
+                  this.setState({
+                    reservationBookingData: res.data.booking_data,
+                    reservationpropertyData: res.data.property_data,  })
+              })
+              console.log("booking detail", this.state.reservationBookingData);
+              console.log("booking detail", this.state.reservationpropertyData);
+          
+      }
+
+
+    render(){
+        return(
+            <React.Fragment>
+=======
+  constructor(props) {
+    super(props);
+    this.state = {
+      bookingid: props.match.params.bookingId,
+      reservationBookingData: [],
+      reservationpropertyData: [],
+      discount: "Discount",
+      property_amenities: [],
+      premier_amenities: [],
+      alert: null,
+      bookingstatus: 1,
+    };
+  }
+  async componentDidMount() {
+    const USER_TOKEN = JSON.parse(localStorage.getItem("login"));
+    console.log(USER_TOKEN);
+    const AuthStr = "Bearer ".concat(USER_TOKEN);
+    console.log(
+      `http://34.93.89.207/olive_api/public/api/booking/${this.state.bookingid}`
+    );
+    // const response = axios.get(`http://34.93.89.207/olive_api/public/api/booking/ &#8377;{this.state.bookingid}`,{
+    // headers: { Authorization: AuthStr }});
+    await axios
+      .get(
+        `http://34.93.89.207/olive_api/public/api/booking/${this.state.bookingid}`,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
+      .then((res) => {
+        this.setState({
+          reservationBookingData: res.data.booking_data,
+          reservationpropertyData: res.data.property_data,
+          property_amenities: res.data.property_data.property_amenities,
+          premier_amenities: res.data.property_data.premier_amenities,
+        });
+      });
+    console.log("booking detail", this.state.reservationBookingData);
+    console.log("booking detail", this.state.reservationpropertyData);
+  }
+  cancelbooking(id) {
+    console.info("booking id", id);
+    const USER_TOKEN = JSON.parse(localStorage.getItem("login"));
+    console.log(USER_TOKEN);
+    const AuthStr = "Bearer ".concat(USER_TOKEN);
+    axios({
+      method: "get",
+      url: `http://34.93.89.207/olive_api/public/api/booking/${id}/cancel`,
+
+      headers: { Authorization: AuthStr },
+    })
+      .then((response) => {
+        console.info("status", response);
+        const getAlert = () => (
+          <SweetAlert
+            confirmBtnBsStyle="success"
+            success
+            title="Successfully Cancelled"
+            onConfirm={() => this.hideAlert()}
+          >
+            <p className="p2">
+              Hello! Your booking cancellation request has been forwarded to our
+              customer support. We will be calling you shortly for confirmation.
+            </p>
+          </SweetAlert>
+        );
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+
+        this.setState({
+          alert: getAlert(),
+          bookingstatus: 0,
+        });
+        //handle success
+        console.info("alrt status", this.state.alert);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log("Error while calling api", response);
+      });
+  }
+  hideAlert() {
+    console.log("Hiding alert...");
+    this.setState({
+      alert: null,
+    });
+  }
+
+  alertshow() {
+    const getAlert = () => (
+      <SweetAlert
+        confirmBtnBsStyle="success"
+        success
+        title="Successfully Cancelled"
+        onConfirm={() => this.hideAlert()}
+      >
+        <p className="p2">
+          Hello! Your booking cancellation request has been forwarded to our
+          customer support. We will be calling you shortly for confirmation.
+        </p>
+      </SweetAlert>
+    );
+
+    this.setState({
+      alert: getAlert(),
+    });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <section className="bg-grey apartment-detail-tab pad-45 reservationpage ">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <h1 className="font-green font-cap mb-20">Reservation</h1>
+              </div>
+            </div>
+
+            <Tabs defaultActiveKey="upcoming" id="uncontrolled-tab-example">
+              {/* tab apartment */}
+              <Tab
+                eventKey="upcoming"
+                title="upcoming"
+                className="upcoming-tab"
+              >
+                <div className="row">
+                  <div className="col-md-8">
+                    <div className="listing-card">
+                      <div className="row">
+                        <div className="col-md-8">
+                          {/* <div className=" fl-100">
+                            <h3 className="apt-det-title fw-700 fl-100 font-green">
+                              {this.props.apartmentdetailstitle}
+                            </h3>
+                            <div className="rating listing-rating mb-10">
+                              <Rate
+                                disabled
+                                allowHalf
+                                onFocus
+                                defaultValue={4}
+                              />
+                            </div>
+<<<<<<< HEAD
+                           </div>
+                           <div className="col-md-12 mt-15">
+                           <p class="p2 font-cap mb-10"><strong>check in:</strong> {moment(this.state.reservationBookingData.check_in).format("ddd,  MMM D")}</p>
+                           <p class="p2 font-cap mb-10"><strong>check out:</strong> {moment(this.state.reservationBookingData.check_out).format("ddd,  MMM D")} </p>
+                           <p class="p2 font-cap mb-10"><strong>Guest:</strong>  {this.state.reservationBookingData.guest} </p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Address:</strong> {this.state.reservationpropertyData.address} </p>
+                           <p class="p2 font-cap mb-10"><strong>Phone Number:</strong> {this.state.reservationpropertyData.contact_number} </p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Number of rooms:</strong>  1 room</p>
+                           <p class="p2 font-cap mb-10"><strong>reservation name:</strong>  shopie dom</p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Amenities:</strong></p>
+                           <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Tv.png")}/>Tata Sky (Limited Channels)
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Housekeeping.png")}/>Housekeeping & Linen (Once Weekly)
+                          </p>
+                          <p class="date-guest p2 font-cap">
+                             <img class="" src={require("../../assets/apartmentdetails/Wifi.png")}/>Wi-Fi Internet (4 MBPS)
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Toiletries.png")}/>Complimentary Toiletries
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Tv.png")}/>Tata Sky (Limited Channels)
+                          </p>
+                          <Button className="cancel-res" onClick={() => this.CancelRequest()}> Request cancellation</Button>
+                          {this.state.alert}
+                          </div>
+                           </div>
+                          
+                           <div className="col-md-4">
+                            <div className="reserve-img deskview">
+                            <img  className=" w-100"  src={require('../../assets/apartmentdetails/IMG_2.jpg')} alt="First slide"/>
+                            </div>
+                           </div>
+                           <div className="col-md-12 mt-15">
+                      
+                        
+=======
+                            <div className="listingcard-icon-list mb-10">
+                              <ul>
+                                {this.state.premier_amenities.map(
+                                  (amenity, index) => (
+                                    <li>
+                                      <img
+                                        className=""
+                                        src={amenity.image}
+                                        alt="First slide"
+                                      />
+                                    </li>
+                                  )
+                                )}
+                              </ul>
+                            </div>
+                          </div> */}
+                          <Apartmentdetailstitle
+                            apartmentdetailstitle={
+                              this.state.reservationpropertyData.property_title
+                            }
+                            aminitiesdetail={this.state.property_amenities}
+                          />
+                          <div className="fl-100 mt-15">
+                            <div className="reserve-img mobview mb-30">
+                              <img
+                                className=" w-100"
+                                // src={require('../../assets/apartmentdetails/IMG_2.jpg')}
+                                src={
+                                  this.state.reservationpropertyData
+                                    .property_image
+                                }
+                                alt="First slide"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-12 mt-15">
+                            <p class="p2 font-cap mb-10">
+                              <strong>check in:</strong>{" "}
+                              {moment(
+                                this.state.reservationBookingData.check_in
+                              ).format("ddd,  MMM D")}
+                            </p>
+                            <p class="p2 font-cap mb-10">
+                              <strong>check out:</strong>{" "}
+                              {moment(
+                                this.state.reservationBookingData.check_out
+                              ).format("ddd,  MMM D")}{" "}
+                            </p>
+                            <p class="p2 font-cap mb-10">
+                              <strong>Guest:</strong>{" "}
+                              {this.state.reservationBookingData.guest}{" "}
+                            </p>
+                            <div className="hr-thin mb-10"></div>
+                            <p class="p2 font-cap mb-10">
+                              <strong>Address:</strong>{" "}
+                              {this.state.reservationpropertyData.address}{" "}
+                            </p>
+                            <p class="p2 font-cap mb-10">
+                              <strong>Phone Number:</strong>{" "}
+                              {
+                                this.state.reservationpropertyData
+                                  .contact_number
+                              }{" "}
+                            </p>
+                            <div className="hr-thin mb-10"></div>
+                            <p class="p2 font-cap mb-10">
+                              <strong>Number of rooms:</strong> 1 room
+                            </p>
+                            <p class="p2 font-cap mb-10">
+                              <strong>reservation name:</strong> shopie dom
+                            </p>
+                            <div className="hr-thin mb-10"></div>
+                            <p class="p2 font-cap mb-10">
+                              <strong>Amenities:</strong>
+                            </p>
+                            {this.state.premier_amenities.map(
+                              (amenity, index) => (
+                                <p class="date-guest p2 font-cap ">
+                                  <img class="" src={amenity.image} />
+                                  {amenity.name}
+                                </p>
+                              )
+                            )}
+                            {this.state.bookingstatus == 1 ? (
+                              <Button
+                                className="cancel-res "
+                                onClick={() =>
+                                  this.cancelbooking(
+                                    this.state.reservationBookingData.id
+                                  )
+                                }
+                              >
+                                Request cancellation
+                              </Button>
+                            ) : (
+                              <Button className="cancel-res ">Cancelled</Button>
+                            )}
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+
+                            {this.state.alert}
+                          </div>
+                        </div>
+
+                        <div className="col-md-4">
+                          <div className="reserve-img deskview">
+                            <img
+                              className=" w-100"
+                              src={require("../../assets/apartmentdetails/IMG_2.jpg")}
+                              alt="First slide"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-12 mt-15">
+                          {/* <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="listing-card">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <p className="p1 font-green font-cap fw-700">
+                            Summary of Charges
+                          </p>
+                          <p className="p2 font-cap fw-700">
+                            Total Cost: &#8377;{" "}
+                            {this.state.reservationBookingData.total_amount ===
+                            null
+                              ? this.state.reservationBookingData.booking_amount
+                              : this.state.reservationBookingData
+                                  .total_amount}{" "}
+                          </p>
+                          <div className="hr-thin mb-10"></div>
+                          <p className="mbb-5 p4 font-cap ">
+                            <strong>Purchase Date:</strong> jan 28, 2020
+                          </p>
+                          <p className="mbb-5 p4 font-cap ">
+                            <strong>Payment method:</strong> Card
+                          </p>
+                          <p className="mbb-5 p4 font-cap ">
+                            <strong>
+                              studio apartment -{" "}
+                              <span className="font-green">standard</span>
+                            </strong>{" "}
+                          </p>
+                          <div className="hr-thin mt-10"></div>
+                        </div>
+                        <div className="col-md-12 reserv-detail mt-15">
+                          <div className="fl-100 deals-card">
+                            <div className="deals-card-left">
+                              <p className="p2 deal-type">
+                                best available rates
+                              </p>
+                              <div className="deals-hr"></div>
+
+                              <p className="cancel-type">
+                                <img
+                                  className=""
+                                  src={require("../../assets/apartmentdetails/check.png")}
+                                />
+                                free cancellation
+                              </p>
+                            </div>
+                            <div className="deals-card-right text-right">
+                              <p className="cancel-type">
+                                <img
+                                  className=""
+                                  src={require("../../assets/apartmentdetails/Pay_Now_Later.png")}
+                                />
+                                pay now
+                              </p>
+                              <p className="deal-price fw-700 p1">
+                                {" "}
+                                &#8377; 7,900
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <ul className="checkout-calculation">
+                            <li>
+                              {" "}
+                              <span> &#8377; 3,300</span> x{" "}
+                              <span>3 Nights</span>{" "}
+                              <span className="amount fw-700">
+                                {" "}
+                                &#8377;{" "}
+                                {
+                                  this.state.reservationBookingData
+                                    .booking_amount
+                                }
+                              </span>{" "}
+                            </li>
+                            <li>
+                              {" "}
+                              <span>
+                                {" "}
+                                {this.state.reservationBookingData
+                                  .discount_amount === null
+                                  ? ""
+                                  : this.state.discount}{" "}
+                              </span>{" "}
+                              <span className="amount fw-700">
+                                {" "}
+                                - &#8377;{" "}
+                                {this.state.reservationBookingData
+                                  .discount_amount !== null
+                                  ? parseFloat(
+                                      this.state.reservationBookingData
+                                        .discount_amount
+                                    ).toFixed(2)
+                                  : ""}
+                              </span>{" "}
+                            </li>
+                            <li>
+                              {" "}
+                              <span>Tax</span>{" "}
+                              <span className="amount fw-700">
+                                {" "}
+                                &#8377; 3,000
+                              </span>{" "}
+                            </li>
+                            <li>
+                              {" "}
+                              <span>Cleaning fee</span>{" "}
+                              <span className="amount fw-700">
+                                {" "}
+                                &#8377;{" "}
+                                {
+                                  this.state.reservationBookingData
+                                    .cleaning_charges
+                                }
+                              </span>{" "}
+                            </li>
+                          </ul>
+                          <div className="hr-thin"></div>
+                          <p className="check-total-amnt font-green font-cap fw-700 p2">
+                            Total
+                            <span>
+                              {" "}
+                              &#8377;{" "}
+                              {
+                                this.state.reservationBookingData.total_amount
+                              }{" "}
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Tab>
+              {/* tab apartment end */}
+
+<<<<<<< HEAD
+
+
+             <Tab eventKey="Past" title="Past" className="upcoming-tab">
+             <div className="row">
+                      <div className="col-md-8">
+                      <div className="listing-card">
+                        <div className="row">
+                           <div className="col-md-8">
+                           <Apartmentdetailstitle
+                           apartmentdetailstitle={this.state.reservationpropertyData.property_title}
+                         />
+              <div className="fl-100 mt-15">
+              <div className="reserve-img mobview mb-30">
+                            <img  className=" w-100"  
+                            // src={require('../../assets/apartmentdetails/IMG_2.jpg')} 
+                            src={this.state.reservationpropertyData.property_image}
+                            alt="First slide"/>
+                            </div>
+                           </div>
+                           <div className="col-md-12 mt-15">
+                           <p class="p2 font-cap mb-10"><strong>check in:</strong> {moment(this.state.reservationBookingData.check_in).format("ddd,  MMM D")}</p>
+                           <p class="p2 font-cap mb-10"><strong>check out:</strong> {moment(this.state.reservationBookingData.check_out).format("ddd,  MMM D")} </p>
+                           <p class="p2 font-cap mb-10"><strong>Guest:</strong>  {this.state.reservationBookingData.guest} </p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Address:</strong> {this.state.reservationpropertyData.address} </p>
+                           <p class="p2 font-cap mb-10"><strong>Phone Number:</strong> {this.state.reservationpropertyData.contact_number} </p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Number of rooms:</strong>  1 room</p>
+                           <p class="p2 font-cap mb-10"><strong>reservation name:</strong>  shopie dom</p>
+                           <div className="hr-thin mb-10"></div>
+                           <p class="p2 font-cap mb-10"><strong>Amenities:</strong></p>
+                           <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Tv.png")}/>Tata Sky (Limited Channels)
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Housekeeping.png")}/>Housekeeping & Linen (Once Weekly)
+                          </p>
+                          <p class="date-guest p2 font-cap">
+                             <img class="" src={require("../../assets/apartmentdetails/Wifi.png")}/>Wi-Fi Internet (4 MBPS)
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Toiletries.png")}/>Complimentary Toiletries
+                          </p>
+                          <p class="date-guest p2 font-cap ">
+                             <img class="" src={require("../../assets/apartmentdetails/Tv.png")}/>Tata Sky (Limited Channels)
+                          </p>
+                     
+                          </div>
+                           </div>
+                          
+                           <div className="col-md-4">
+                            <div className="reserve-img deskview">
+                            <img  className=" w-100"  src={require('../../assets/apartmentdetails/IMG_2.jpg')} alt="First slide"/>
+                            </div>
+                           </div>
+                           <div className="col-md-12 mt-15">
+                      
+                        
+
+      {/* <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
+
+                           </div>
+                         
+                        </div>
+                      </div>
+                      </div>
+                      <div className="col-md-4">
+                      <div className="listing-card">
+                       <div className="row">
+                       <div className="col-md-12">
+                       <p className="p1 font-green font-cap fw-700">Summary of Charges</p>
+                       <p className="p2 font-cap fw-700">Total Cost:  &#8377; {this.state.reservationBookingData.total_amount===null ? this.state.reservationBookingData.booking_amount:this.state.reservationBookingData.total_amount} </p>
+                       <div className="hr-thin mb-10"></div>
+                       <p className="mbb-5 p4 font-cap "><strong>Purchase Date:</strong>  jan 28, 2020</p>
+                       <p className="mbb-5 p4 font-cap "><strong>Payment method:</strong>  Card</p>
+                       <p className="mbb-5 p4 font-cap "><strong>studio apartment - <span className="font-green">standard</span></strong>  </p>
+                       <div className="hr-thin mt-10"></div>
+
+                       
+                       </div>
+                       <div className="col-md-12 reserv-detail mt-15">
+                       <div className="fl-100 deals-card">
+              <div className="deals-card-left">
+                <p className="p2 deal-type">best available rates</p>
+                <div className="deals-hr"></div>
+                
+                <p className="cancel-type"><img className="" src={require('../../assets/apartmentdetails/check.png')}/>free cancellation</p>
+              </div>
+              <div className="deals-card-right text-right">
+                <p className="cancel-type"><img className="" src={require('../../assets/apartmentdetails/Pay_Now_Later.png')}/>pay now</p>
+                <p className="deal-price fw-700 p1"> &#8377; 7,900</p>
+              </div>
+            </div>
+                       </div>
+                       <div className="col-md-12">
+                       <ul className="checkout-calculation">
+               <li> <span> &#8377; 3,300</span> x <span>3 Nights</span> <span className="amount fw-700"> &#8377; {this.state.reservationBookingData.booking_amount}</span>  </li>
+               <li> <span> {this.state.reservationBookingData.discount_amount===null ? "" : this.state.discount} </span> <span className="amount fw-700"> &#8377; {this.state.reservationBookingData.discount_amount!==null? this.state.reservationBookingData.discount_amount: ""}</span>  </li>
+               <li> <span>Tax</span> <span className="amount fw-700"> &#8377; 3,000</span>  </li>
+               <li> <span>Cleaning fee</span> <span className="amount fw-700"> &#8377; 3,000</span>  </li>
+               <li> <span>Paid Cleaning</span> <span className="amount fw-700"> &#8377; 3,000</span>  </li>
+           </ul>
+           <div className="hr-thin"></div>
+           <p className="check-total-amnt font-green font-cap fw-700 p2">Total<span> &#8377; {this.state.reservationBookingData.total_amount} </span></p>
+                       </div>
+                       </div>
+                       
+                       
+                      </div>
+                      </div>
+                      </div>
+             </Tab> 
+          
+                
+           </Tabs>
+           
+           
+        </div>
+      </section>
+           {/* location section */}
+           <section className="reservationpageback">
+=======
+              <Tab eventKey="Past" title="Past"></Tab>
+            </Tabs>
+          </div>
+        </section>
+        {/* location section */}
+        <section className="reservationpageback">
+>>>>>>> 37bd4771a283f4aa815ae4287aad6fb0a10a6131
+          <div className="container">
+            <Heading title="Browse Other Locations" />
+            <div className="row">
+              <div className="col-lg-3 col-md-3">
+                <Locations
+                  locationimg={require("../../assets/Delhi.jpg")}
+                  locationname="Delhi"
+                />
+              </div>
+              <div className="col-lg-3 col-md-3">
+                <Locations
+                  locationimg={require("../../assets/Gurugram.jpg")}
+                  locationname="Gurugram"
+                />
+              </div>
+              <div className="col-lg-3 col-md-3">
+                <Locations
+                  locationimg={require("../../assets/Hyderabad.jpg")}
+                  locationname="Hyderabad"
+                />
+              </div>
+              <div className="col-lg-3 col-md-3">
+                <Locations
+                  locationimg={require("../../assets/Jaipur.jpg")}
+                  locationname="Jaipur"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* location section end */}
+      </React.Fragment>
+    );
+  }
+}
+export default Reservationpage;

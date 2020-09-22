@@ -1,0 +1,13 @@
+.apartment-detail-tab .listinginput{padding-bottom: 15px;}
+.apartment-detail-search{    border-radius: 10px;
+    padding: 15px;
+    background: #fff;}
+.apt-det-search-dt-pic{padding: 0;}
+.apartment-detail-tab .listinginput label{
+    font-size: 16px;
+}
+.apartment-detail-tab .listinginput .ant-calendar-range-picker-input{font-size: 16px;}
+
+@media only screen and (max-width: 990px){
+    .apt-det-search-dt-pic{padding: inherit;}
+}

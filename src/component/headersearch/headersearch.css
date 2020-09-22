@@ -1,0 +1,61 @@
+.form-label, .header-form-lable{font-size: 16px;
+    font-family: 'SharpSans-Bold';
+color: #5DB64C;
+text-transform: uppercase;
+font-weight: 500;
+margin-bottom: .5em;
+line-height: 16px;
+ }
+ .header-form-lable{margin-top: 4px;}
+.header-form-box .form-group{padding: 0;
+margin-bottom: 0;}
+.header-form-box{background: #fff;
+padding: 30px 40px;
+border-left: 1px solid #B1B0B0;
+}
+.header-form-datepick{position: relative;
+width: 100%;
+z-index: 1;
+}
+.datepicker-icon{position: absolute;
+right: 10px;
+top: 5px;
+z-index: -1;
+}
+.datepicker-icon:hover{cursor: pointer;}
+.react-datepicker-ignore-onclickoutside, .react-datepicker__input-container input{width: 100%;
+border: none;
+padding: 5px;}
+.react-datepicker__input-container input{background: transparent;}
+.react-datepicker-wrapper{width: 100%;}
+.header-form-box .form-control{line-height: inherit;
+height: inherit;
+padding: 0;
+border: none;
+border-bottom: 1px solid #B1B0B0;
+border-radius:0; 
+}
+.header-form-box .form-control:focus{ box-shadow: 0 0 0 1px rgba(0,123,255,.25);}
+.header-form-submit{padding: 0;}
+.header-form-submit-btn{
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+}
+.header-form-submit-btn button{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+ 
+}
+.header-form-submit-btn button i{font-size: 24px;
+}
+.header-form-box select{height: 30px !important;}
+.header-form-submit-btn .btn:hover{color: #fff;}
+@media only screen and (max-width: 990px){
+    .pad-l-r-20{padding-left:20px;
+    padding-right: 20px; }
+    .header-form-box{padding: 15px 40px;}
+    .header-form-submit-btn button i{font-size: 16px;}
+    .datepicker-icon{z-index: -8;}
+  }

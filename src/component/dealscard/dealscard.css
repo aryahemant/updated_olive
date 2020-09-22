@@ -1,0 +1,125 @@
+.deals-card-left {
+  width: 60%;
+  float: left;
+}
+.deals-card-right {
+  width: 40%;
+  float: left;
+}
+.deals-card {
+  padding: 12px;
+  background: #efc733;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.cat-stnd .deals-card {
+  background: #efc733;
+}
+.cat-sup .deals-card {
+  background: #0d47bc;
+}
+.cat-prem .deals-card {
+  background: #5db64c;
+}
+.deals-card .deals-hr {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.deals-card p {
+  color: #fff;
+}
+.deals-card .deal-type {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 14px;
+  font-size: 12px;
+}
+.deals-card .deal-price {
+  margin-bottom: 10px;
+  font-size: 31px;
+}
+.deals-card .deal-price sup {
+  font-size: 12px;
+  float: right;
+  top: 5px;
+  left: -20px;
+}
+/* .deals-card .deal-price span{position: relative;
+    font-size: 12px;
+    top: 5px;
+    font-weight: 400;} */
+.deals-card .deal-price span {
+  position: absolute;
+  font-size: 18px;
+  margin-left: 5px;
+}
+.strike-price {
+  top: -12px;
+}
+.per-night {
+  bottom: -8px;
+}
+
+.deals-card .cancel-type {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: capitalize;
+}
+.canceltype2 {
+  width: 100%;
+  text-align: right;
+  margin-top: 5px;
+  float: left;
+}
+.deal-price {
+  position: relative;
+}
+.deal-type,
+.cancel-type {
+  cursor: pointer;
+}
+.deals-card .cancel-type img {
+  margin-right: 10px;
+}
+.deals-card .book-btn {
+  background: #fff;
+  line-height: 21px;
+  font-size: 19px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-family: "SharpSans-Medium";
+  border: none;
+}
+.cat-stnd .deals-card .book-btn {
+  color: #efc733;
+}
+.cat-sup .deals-card .book-btn {
+  color: #0d47bc;
+}
+.cat-prem .deals-card .book-btn {
+  color: #5db64c;
+}
+.info-icon {
+  margin-left: 5px;
+}
+@media only screen and (max-width: 990px) {
+  .deals-card .deal-price sup {
+    top: 2px;
+    left: -47px;
+  }
+  .deals-card .book-btn {
+    padding: 9px 25px;
+    font-size: 12px;
+  }
+  .deal-price {
+    font-size: 20px;
+  }
+  .deals-card .cancel-type img {
+    width: 16px;
+  }
+}
